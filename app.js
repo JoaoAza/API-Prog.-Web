@@ -12,15 +12,6 @@ const swaggerDocument = YAML.load('./swagger.yaml');
 // Swagger UI
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// Banco fake em memória
-let posts = [
-    {
-        id: 1,
-        titulo: 'Primeiro Post',
-        conteudo: 'Conteúdo do primeiro post'
-    }
-];
-
 // Rota inicial
 app.get('/', (req, res) => {
     res.send('API online');
